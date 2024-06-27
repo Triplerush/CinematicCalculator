@@ -99,3 +99,37 @@ def calcular():
 
 root = tk.Tk()
 root.title("Ecuaciones de MRU y MRUV")
+
+opcion = tk.StringVar()
+tipo_calculo_mru = tk.StringVar()
+tipo_calculo_mruv = tk.StringVar()
+
+opcion_label = ttk.Label(root, text="Seleccione el tipo de movimiento:")
+opcion_label.grid(row=1, column=0, padx=10, pady=10, sticky="w")
+
+opcion_mru_radio = ttk.Radiobutton(root, text="MRU", variable=opcion, value="MRU")
+opcion_mru_radio.grid(row=2, column=0, padx=10, pady=5, sticky="w")
+
+opcion_mruv_radio = ttk.Radiobutton(root, text="MRUV", variable=opcion, value="MRUV")
+opcion_mruv_radio.grid(row=3, column=0, padx=10, pady=5, sticky="w")
+
+tipo_calculo_mru_label = ttk.Label(root, text="Seleccione el valor a calcular (MRU):")
+tipo_calculo_mru_label.grid(row=4, column=0, padx=10, pady=10, sticky="w")
+
+tipo_calculo_mru_distancia_radio = ttk.Radiobutton(root, text="Distancia (Δx)", variable=tipo_calculo_mru, value="Distancia (Δx)")
+tipo_calculo_mru_distancia_radio.grid(row=5, column=0, padx=10, pady=5, sticky="w")
+
+tipo_calculo_mru_velocidad_radio = ttk.Radiobutton(root, text="Velocidad (v)", variable=tipo_calculo_mru, value="Velocidad (v)")
+tipo_calculo_mru_velocidad_radio.grid(row=6, column=0, padx=10, pady=5, sticky="w")
+
+tipo_calculo_mru_tiempo_radio = ttk.Radiobutton(root, text="Tiempo (Δt)", variable=tipo_calculo_mru, value="Tiempo (Δt)")
+tipo_calculo_mru_tiempo_radio.grid(row=7, column=0, padx=10, pady=5, sticky="w")
+
+tipo_calculo_mruv_label = ttk.Label(root, text="Seleccione el valor a calcular (MRUV):")
+tipo_calculo_mruv_label.grid(row=8, column=0, padx=10, pady=10, sticky="w")
+
+tipo_calculo_mruv_distancia_radio = ttk.Radiobutton(root, text="Distancia (Δx)", variable=tipo_calculo_mruv, value="Distancia (Δx)")
+tipo_calculo_mruv_distancia_radio.grid(row=9, column=0, padx=10, pady=5, sticky="w")
+
+tipo_calculo_mruv_velocidad_radio = ttk.Radiobutton(root, text="Velocidad final (Vf)", variable=tipo_calculo_mruv, value="Velocidad final (Vf)")
+tipo_calculo_mruv_velocidad_radio.grid(row=10, column=0, padx=10, pady=5, sticky="w")
