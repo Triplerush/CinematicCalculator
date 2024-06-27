@@ -67,3 +67,35 @@ def calcular():
                 t = float(t_entry.get())
                 resultado = distancia_MRU(v, t)
                 messagebox.showinfo("Resultado", f"Distancia (Δx): {resultado:.2f} m")
+            elif tipo_calculo == "Velocidad (v)":
+                d = float(d_entry.get())
+                t = float(t_entry.get())
+                resultado = velocidad_MRU(d, t)
+                messagebox.showinfo("Resultado", f"Velocidad (v): {resultado:.2f} m/s")
+            elif tipo_calculo == "Tiempo (Δt)":
+                d = float(d_entry.get())
+                v = float(v_entry.get())
+                resultado = tiempo_MRU(d, v)
+                messagebox.showinfo("Resultado", f"Tiempo (Δt): {resultado:.2f} s")
+        elif opcion.get() == "MRUV":
+            tipo_calculo = tipo_calculo_mruv.get()
+            vi = float(vi_entry.get())
+            t = float(t_entry.get())
+            a = float(a_entry.get())
+            if tipo_calculo == "Distancia (Δx)":
+                resultado = distancia_MRUV(vi, t, a)
+                messagebox.showinfo("Resultado", f"Distancia (Δx): {resultado:.2f} m")
+            elif tipo_calculo == "Velocidad final (Vf)":
+                resultado = velocidad_MRUV(vi, t, a)
+                messagebox.showinfo("Resultado", f"Velocidad final (Vf): {resultado:.2f} m/s")
+            elif tipo_calculo == "Gráfica de Δx en función de Δt":
+                draw(vi, t, a)
+    except ValueError:
+        messagebox.showerror("Error", "Ingrese valores numéricos válidos")
+    except NegativeValueError as e:
+        messagebox.showerror("Error", str(e))
+    except ZeroDivisionError as e:
+        messagebox.showerror("Error", str(e))
+
+root = tk.Tk()
+root.title("Ecuaciones de MRU y MRUV")
